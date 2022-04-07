@@ -4,13 +4,26 @@
 
 from start_adventure import *
 from player import *
+from combat import *
 
 
 def main():
     # '''
     # Gets the players name by calling get_player_name() before starting the adventure.
     # '''
-    player_name = get_player_name()
+    game = Game()
+
+    #game.populate()
+    print("Welcome, adventurer.")
+    game.list_commands()
+    game.hero.name_self()
+    game.hero.look_self()
+    #game.look()
+
+    # while True:
+    #     game.handle_input()
+    #     game.update()
+    #     game.output()
 
     ####################################################################
     # ACTIVITIES
@@ -36,9 +49,6 @@ def main():
     #####################################################################
 
     start_adventure()
-
-    print("\nThe end\n")
-    print(f"Thanks for playing, {player_name.upper()}")
 
 
 if __name__ == '__main__':

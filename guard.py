@@ -1,5 +1,6 @@
 from invent import *
 from you_died import *
+from combat import *
 
 
 def guard():
@@ -62,6 +63,10 @@ def guard():
                         elif talk == "taunt":
                             you_died("Before you know it, the world goes dark and you have died. \n<GAME OVER>")
             elif action == "attack":
-                you_died(
-                    "Guard woke with a grunt, and reached for his dagger and before you know it, the world goes dark "
-                    "and you just died. \n<GAME OVER>")
+                game = Game()
+                game.populate("guard")
+                game.list_commands()
+                game.look()
+                game.handle_input()
+                return
+
