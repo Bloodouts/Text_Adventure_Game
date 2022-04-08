@@ -15,6 +15,9 @@ def main():
 
     start_adventure()
 
+    # game.update()
+    # game.output()
+
 
 if __name__ == '__main__':
     main()

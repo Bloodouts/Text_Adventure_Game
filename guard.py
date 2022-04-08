@@ -67,6 +67,9 @@ def guard():
                 game.populate("guard")
                 game.list_commands()
                 game.look()
-                game.handle_input()
+                while True:
+                    game.handle_input()
+                    game.update()
+                    game.output()
                 return
 

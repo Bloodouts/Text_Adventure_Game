@@ -16,10 +16,10 @@ class Game:
     def __init__(self):
         self.command_list = ["look", "name", "fight", "heal", 'report', '?']
         self.hero = Hero()
-        self.monster = Monster("guard")
+        self.monster = Monster(" ")
 
     def list_commands(self):
-        print('Commands are', ', \n'.join(self.command_list[:-1]), 'and', self.command_list[-1] + '.')
+        print('Commands are', ', '.join(self.command_list[:-1]), 'and', self.command_list[-1] + '.')
 
     def handle_input(self):
         com = raw_input(self.prompt()).lower().split()
@@ -47,10 +47,8 @@ class Game:
             self.info()
         elif com[0] == "heal":
             self.hero.heal_self()
-        elif com[0] == "?":
-            self.list_commands()
         else:
-            print("lol wut")
+            self.list_commands()
 
     def fight_monster(self, attacker, defender):
         while defender.hp > 0 and attacker.hp > 0:
