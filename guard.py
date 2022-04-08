@@ -1,6 +1,7 @@
 from invent import *
 from you_died import *
 from combat import *
+from wide_world import *
 
 
 def guard():
@@ -38,7 +39,16 @@ def guard():
             if action == "sneak":
                 print("You just slipped through the door before the guard realised it.")
                 print("You are now outside, home free! Huzzah!\n")
-                return
+                adventure = Adventure()
+
+                adventure.populate()
+                adventure.list_commands()
+                adventure.hero.look_self()
+                adventure.look()
+                while True:
+                    adventure.handle_input()
+                    adventure.update()
+                    adventure.output()
             elif action == "wake":
                 print("The Guard wakes with a grunt, and reaches for his dagger.")
                 while True:
@@ -59,7 +69,16 @@ def guard():
                                     print("The guard is happy to see such a shiny gift and steps out of your way")
                                     print("You are now outside, home free! Huzzah!\n")
                                     del_inventory(gift)
-                                    return
+                                    adventure = Adventure()
+
+                                    adventure.populate()
+                                    adventure.list_commands()
+                                    adventure.hero.look_self()
+                                    adventure.look()
+                                    while True:
+                                        adventure.handle_input()
+                                        adventure.update()
+                                        adventure.output()
                         elif talk == "taunt":
                             you_died("Before you know it, the world goes dark and you have died. \n<GAME OVER>")
             elif action == "attack":

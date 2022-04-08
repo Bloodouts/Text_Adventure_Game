@@ -19,7 +19,7 @@ def blue_door_room():
         "front of the door")
 
     # Ask player what to do.
-    action = input("What do you do? > ")
+    action = input("What do you do? > ".lower())
 
     # This is a way to see if the text typed by player is in the list
     if action.lower() in ["treasure", "chest", "left"]:

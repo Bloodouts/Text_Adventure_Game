@@ -14,7 +14,7 @@ class Monster:
 
 class Game:
     def __init__(self):
-        self.command_list = ["look", "name", "fight", "heal", 'report', '?']
+        self.command_list = ["look", "name", "fight", "heal", 'report', 'quit', '?']
         self.hero = Hero()
         self.monster = Monster(" ")
 
@@ -44,9 +44,12 @@ class Game:
         elif com[0] == "name":
             self.hero.name_self()
         elif com[0] == "info":
-            self.info()
+            self.hero.look_self()
+            self.look_monster()
         elif com[0] == "heal":
             self.hero.heal_self()
+        elif com[0] == "exit":
+            return
         else:
             self.list_commands()
 
