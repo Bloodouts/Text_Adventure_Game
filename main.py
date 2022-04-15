@@ -1,5 +1,5 @@
-from start_adventure import *
-from combat import *
+from Adventure.start_adventure import *
+from Enemy.combat import *
 
 
 def main():
