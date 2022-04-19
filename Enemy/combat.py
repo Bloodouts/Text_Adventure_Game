@@ -17,7 +17,7 @@ class Monster:
 
 class Game:
     def __init__(self):
-        self.command_list = ["look", "name", "fight", "heal", 'report', 'quit', '?']
+        self.command_list = ["move", "look", "name", "fight", "heal", 'report', 'quit', '?']
         self.hero = Hero()
         self.monster = Monster(" ")
 
@@ -46,9 +46,9 @@ class Game:
                 self.look()
         elif com[0] == "move":
             if len(com) > 1:
-                room.move(com[1])
+                adventure.move(com[1])
             else:
-                print("Move where?", "You can exit to: %s" % ', '.join(self.current_room.exits))
+                print("Move where?", "You can exit to: %s" % ', '.join(room.exits))
         elif com[0] == "name":
             self.hero.name_self()
         elif com[0] == "info":
